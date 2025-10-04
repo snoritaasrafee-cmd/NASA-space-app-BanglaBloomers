@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloomWatch 🌸 by Snorita Asrafee</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="style.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+<body>
+<div id="loadingOverlay"><span></span> Loading data...</div>
+
+<header>
+<h1>🌸 BloomWatch</h1>
+<nav>
+<a href="#map">Map</a>
+<a href="#charts">Charts</a>
+<a href="#prediction">Prediction</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<div id="sidebar">
+<h3>🌱 NASA Insights</h3>
+<div id="factsText"></div>
+<button id="newFact">🔄 Show Another Fact</button>
+</div>
+
+<div id="hero">
+<h2>🌸 BloomWatch Dashboard</h2>
+<div class="stats">
+<div>Total Observations: <span id="totalObs">0</span></div>
+<div>Species Tracked: <span id="speciesCount">0</span></div>
+<div>Next Predicted Bloom: <span id="nextBloom">Calculating...</span></div>
+<div>Current Hotspot: <span id="hotspot">N/A</span><div class="pulse"></div></div>
+</div>
+<div id="topSpecies" style="margin-top:15px;">Top Species: <span id="topSpeciesList"></span></div>
+</div>
+
+<div id="controls">
+<label for="speciesFilter">Filter by species:</label>
+<select id="speciesFilter"><option value="All">All Species</option></select><br>
+<label for="timeline">Bloom Timeline:</label><br>
+<input type="range" id="timeline" min="0" max="100" value="100">
+<p id="timeline-date">Showing all dates</p><br>
+<label><input type="checkbox" id="ndviFilter"> Show only high NDVI (&gt;0.5)</label><br>
+<button id="exportCSV">Export Filtered Data</button>
+<button id="playTimeline">▶️ Play Timeline</button>
+<button id="playNDVI">▶️ Animate NDVI</button>
+</div>
+
+<div id="map"></div>
+
+<div class="charts" id="charts">
+<canvas id="barChart" width="400" height="200"></canvas>
+<canvas id="timelineChart" width="400" height="200"></canvas>
+</div>
+
+<div id="prediction">
+<h2>🌱 Next Bloom Predictions</h2>
+<div id="prediction-text">Calculating predictions...</div>
+</div>
+
+<section id="about" style="padding:20px;">
+<h2>About</h2>
+<p>BloomWatch is designed by <strong>Snorita Asrafee</strong> 🌸.  
+It uses NASA GLOBE Phenology data and MODIS NDVI to visualize blooms, predict flowering events, and highlight vegetation hotspots with a modern eco-space interface.  
+Interactive charts and maps allow you to track flowering trends and hotspots in real-time.</p>
+</section>
+
+<footer>
+Data from <a href="https://globe.gov/">NASA GLOBE Observer</a> & MODIS NDVI | Designed by <strong>Snorita Asrafee</strong> | <a href="#">GitHub Repo</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
