@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloomWatch 🌸</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflet.heat -->
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+<body>
+
+  <!-- Floating flowers -->
+  <div class="floating-flowers">
+    <img src="images/flower1.png" class="flower">
+    <img src="images/flower2.png" class="flower">
+    <img src="images/flower3.png" class="flower">
+  </div>
+
+  <header>
+    <h1>BloomWatch 🌸</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#data">Live Data</a></li>
+        <li><a href="#map">Map</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About BloomWatch</h2>
+    <p>Monitoring global flowering phenology using NASA data and citizen science observations.</p>
+  </section>
+
+  <section id="data">
+    <h2>Live Phenology Data</h2>
+    <div id="filters">
+      <button onclick="filterSpecies('All')">All Species</button>
+    </div>
+    <div id="phenology-data"></div>
+    <canvas id="phenologyChart" width="400" height="200"></canvas>
+  </section>
+
+  <section id="map">
+    <h2>Observation Map</h2>
+    <div id="mapid"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BloomWatch Initiative | Designed by Snorita Asrafee</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

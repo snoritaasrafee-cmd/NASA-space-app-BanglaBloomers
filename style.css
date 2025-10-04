@@ -1,0 +1,114 @@
+/* General */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('images/cosmic-floral.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+  position: relative;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #7CFC00;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #7CFC00;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover { text-decoration: underline; }
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/* Phenology Cards */
+.phenology-item {
+  background-color: rgba(0,0,0,0.6);
+  padding: 15px;
+  margin: 10px auto;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: left;
+}
+
+/* Map */
+#mapid {
+  height: 400px;
+  width: 90%;
+  margin: 0 auto;
+  border: 3px solid #7CFC00;
+  border-radius: 10px;
+}
+
+/* Filters */
+#filters { margin-bottom: 20px; }
+#filters button {
+  background-color: #7CFC00;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#filters button:hover { background-color: #32CD32; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* Floating flowers */
+.floating-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.flower {
+  position: absolute;
+  width: 50px;
+  animation: float 15s linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #mapid { height: 300px; }
+  .phenology-item { max-width: 90%; margin: 10px auto; }
+}
